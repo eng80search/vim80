@@ -20,6 +20,9 @@ call plug#begin('$VIM/plugins')
     " MRU
     Plug 'vim-scripts/mru.vim'
 
+    " SQL Formatting
+    Plug 'mattn/vim-sqlfmt'
+
     " Shorthand notation; fetches https://github.com/junegunn/vim-easy-align
     Plug 'junegunn/vim-easy-align'
 
@@ -94,5 +97,8 @@ call plug#begin('$VIM/plugins')
 
     "extended % matching for Many Fromats
     Plug 'tmhedberg/matchit'
+
+    "A Vim plugin for Windows PowerShell support
+    Plug 'PProvost/vim-ps1'
 
 call plug#end()

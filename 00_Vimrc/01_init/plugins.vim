@@ -165,7 +165,7 @@ nmap <silent>,scp       :SQLU_CreateProcedure<CR>
 "【tagbar.vim】プラグイン 関数一覧を表示する
 "--------------------------------------------------------------------------------
 "vbプログラムを認識できるように設定する
-nmap <F9> :TagbarToggle<CR>
+nmap <F12> :TagbarToggle<CR>
 
 "--------------------------------------------------------------------------------
 "【toggletagbar.vim】TagbarとNerdTreeプラグインを上下に配置するプラグイン
@@ -529,7 +529,7 @@ if has('win32') || has('win64')
     \}
 endif
 "ショットカットキー
-nnoremap <silent> <F5> :QuickRun<CR>
+nnoremap <silent> <F9> :QuickRun<CR>
 
 "--------------------------------------------------------------------------------
 "vim-python/python-syntax Setting
