@@ -20,6 +20,9 @@ call plug#begin('$VIM/plugins')
     " MRU
     Plug 'vim-scripts/mru.vim'
 
+    " SQL Formatting
+    Plug 'mattn/vim-sqlfmt'
+
     " Shorthand notation; fetches https://github.com/junegunn/vim-easy-align
     Plug 'junegunn/vim-easy-align'
 

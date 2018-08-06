@@ -188,6 +188,7 @@ nnoremap <silent><Esc><Esc> :<C-u>set nohlsearch!<CR>
 ""--------------------------------------------------------------------------------
 ""python3 Setting
 ""--------------------------------------------------------------------------------
+autocmd FileType python nnoremap <silent> <F10>  :exe("!python -m pdb %")<CR>
 "autocmd FileType python map <buffer><F5>  <Plug>(quickrun)<CR>
 ""autocmd FileType python map <buffer> <F5> <F5> | :exe("!python -S ".expand($VIM)."\\01_Lib\\PythonRemoteDebugging\\pydbgp.py -d localhost:9000  %:p")<CR>
 "
@@ -272,10 +273,18 @@ imap <M-l> <Right>
 imap <M-k> <Up>
 imap <M-j> <Down>
 
-
-
 "--------------------------------------------------------------------------------
 "Python36を有効にする。しないとpython35がないと怒られる
 "--------------------------------------------------------------------------------
 set pythonthreedll=python36.dll
 
+"--------------------------------------------------------------------------------
+"!コマンドをcmdからWindows Powershellに変更
+"PSプロファイルを読み込まないプレーンなPowerShellを起動する場合
+"--------------------------------------------------------------------------------
+if has('win32') || has('win64')
+    set shell=powershell.exe
+    set shellcmdflag=-c
+    set shellquote=\"
+    set shellxquote=
+endif
