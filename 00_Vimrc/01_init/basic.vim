@@ -11,6 +11,12 @@ if exists('g:no_vimrc_example') && g:no_vimrc_example == 1
   silent! source $VIMRUNTIME/vimrc_example.vim
 endif
 
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+""Beep音を消す
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+set belloff=all
+
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 ""light.vim表示のための設定
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -75,6 +81,9 @@ augroup highlightIdegraphicSpace
   autocmd Colorscheme * highlight IdeographicSpace term=underline ctermbg=DarkGrey guibg=DarkGrey
   autocmd VimEnter,WinEnter * match IdeographicSpace /　/
 augroup END
+
+" Javaのハイライト設定
+:let java_highlight_all=1
 
 "インデントをTabではなくスペース４つで揃える
 set tabstop=4
