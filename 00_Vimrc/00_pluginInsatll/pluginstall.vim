@@ -17,8 +17,8 @@ call plug#begin('$VIM/plugins')
     "tagbar
     Plug 'majutsushi/tagbar'
 
-    " MRU
-    Plug 'vim-scripts/mru.vim'
+    " " MRU
+    " Plug 'vim-scripts/mru.vim'
 
     " SQL Formatting
     Plug 'mattn/vim-sqlfmt'
