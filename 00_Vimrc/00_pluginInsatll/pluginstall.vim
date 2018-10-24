@@ -101,7 +101,7 @@ call plug#begin('$VIM/plugins')
     "A Vim plugin for Windows PowerShell support
     Plug 'PProvost/vim-ps1'
 
-    "Japanese Help File
+    "Vim Japanese Help 
     Plug 'vim-jp/vimdoc-ja'
 
 call plug#end()

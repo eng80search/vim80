@@ -3,12 +3,12 @@
 add 'C' flag to 'guioptions' which control to show the caption of window
 
 diff --git a/runtime/doc/options.txt b/runtime/doc/options.txt
-index 390fab0..95ba3b5 100644
+index 01c2d0e31..2c4948b76 100644
 --- a/runtime/doc/options.txt
 +++ b/runtime/doc/options.txt
-@@ -3851,6 +3851,9 @@ A jump table for the options with a short description can be found at |Q_op|.
- 	  'F'	Add a footer.  Only for Motif.  See |gui-footer|.
- 
+@@ -3966,6 +3966,9 @@ A jump table for the options with a short description can be found at |Q_op|.
+ 		try to keep 'lines' and 'columns' the same when adding and
+ 		removing GUI components.
  
 +	  'C'	Remove caption (title) bar.  Support Win32 only.
 +
@@ -17,10 +17,10 @@ index 390fab0..95ba3b5 100644
  'guipty'		boolean	(default on)
  			global
 diff --git a/src/gui.c b/src/gui.c
-index 87b0839..e97cf36 100644
+index 87ea5ce2b..54b5070c6 100644
 --- a/src/gui.c
 +++ b/src/gui.c
-@@ -3372,6 +3372,8 @@ gui_init_which_components(char_u *oldval UNUSED)
+@@ -3454,6 +3454,8 @@ gui_init_which_components(char_u *oldval UNUSED)
      static int	prev_tearoff = -1;
      int		using_tearoff = FALSE;
  #endif
@@ -29,7 +29,7 @@ index 87b0839..e97cf36 100644
  
      char_u	*p;
      int		i;
-@@ -3449,6 +3451,9 @@ gui_init_which_components(char_u *oldval UNUSED)
+@@ -3529,6 +3531,9 @@ gui_init_which_components(char_u *oldval UNUSED)
  		using_tearoff = TRUE;
  #endif
  		break;
@@ -39,7 +39,7 @@ index 87b0839..e97cf36 100644
  	    default:
  		/* Ignore options that are not supported */
  		break;
-@@ -3559,6 +3564,14 @@ gui_init_which_components(char_u *oldval UNUSED)
+@@ -3634,6 +3639,14 @@ gui_init_which_components(char_u *oldval UNUSED)
  	    prev_tearoff = using_tearoff;
  	}
  #endif
@@ -55,21 +55,11 @@ index 87b0839..e97cf36 100644
  	{
  #ifdef FEAT_GUI_GTK
 diff --git a/src/gui_w32.c b/src/gui_w32.c
-index 93fe465..a5d7a89 100644
+index 1dcc9a9f6..0f5e5c1d7 100644
 --- a/src/gui_w32.c
 +++ b/src/gui_w32.c
-@@ -47,6 +47,9 @@ typedef DWORD (WINAPI *FWINLAYER)(HWND hwnd, DWORD crKey, BYTE bAlpha,
- 	DWORD dwFlags);
- static void w32_set_transparency(HWND hwnd, BYTE bAlpha);
- 
-+static int get_caption_height(void);
-+static int get_caption_width_adjustment(void);
-+
- #if defined(FEAT_DIRECTX) || defined(PROTO)
-     int
- directx_enabled(void)
-@@ -1016,6 +1019,57 @@ _OnMouseMoveOrRelease(
-     _OnMouseEvent(button, x, y, FALSE, keyFlags);
+@@ -1080,6 +1080,57 @@ _OnSizeTextArea(
+ #endif
  }
  
 +    static int
@@ -126,7 +116,7 @@ index 93fe465..a5d7a89 100644
  #ifdef FEAT_MENU
  /*
   * Find the vimmenu_T with the given id
-@@ -2978,11 +3032,12 @@ gui_mswin_get_valid_dimensions(
+@@ -3067,11 +3118,12 @@ gui_mswin_get_valid_dimensions(
  
      base_width = gui_get_base_width()
  	+ (GetSystemMetrics(SM_CXFRAME) +
@@ -141,7 +131,7 @@ index 93fe465..a5d7a89 100644
  #ifdef FEAT_MENU
  	+ gui_mswin_get_menu_height(FALSE)
  #endif
-@@ -3385,12 +3440,13 @@ gui_mch_newfont(void)
+@@ -3498,12 +3550,13 @@ gui_mch_newfont(void)
      if (win_socket_id == 0)
      {
  	gui_resize_shell(rect.right - rect.left
@@ -156,7 +146,7 @@ index 93fe465..a5d7a89 100644
  #ifdef FEAT_MENU
  	    - gui_mswin_get_menu_height(FALSE)
  #endif
-@@ -5617,10 +5673,11 @@ gui_mch_set_shellsize(int width, int height,
+@@ -5731,10 +5784,11 @@ gui_mch_set_shellsize(
  
      /* compute the size of the outside of the window */
      win_width = width + (GetSystemMetrics(SM_CXFRAME) +
@@ -170,7 +160,7 @@ index 93fe465..a5d7a89 100644
  #ifdef FEAT_MENU
  			+ gui_mswin_get_menu_height(FALSE)
  #endif
-@@ -6512,7 +6569,8 @@ gui_mch_get_screen_dimensions(int *screen_w, int *screen_h)
+@@ -6685,7 +6739,8 @@ gui_mch_get_screen_dimensions(int *screen_w, int *screen_h)
  
      *screen_w = workarea_rect.right - workarea_rect.left
  		- (GetSystemMetrics(SM_CXFRAME) +
@@ -180,7 +170,7 @@ index 93fe465..a5d7a89 100644
  
      /* FIXME: dirty trick: Because the gui_get_base_height() doesn't include
       * the menubar for MSwin, we subtract it from the screen height, so that
-@@ -6520,7 +6578,7 @@ gui_mch_get_screen_dimensions(int *screen_w, int *screen_h)
+@@ -6693,7 +6748,7 @@ gui_mch_get_screen_dimensions(int *screen_w, int *screen_h)
      *screen_h = workarea_rect.bottom - workarea_rect.top
  		- (GetSystemMetrics(SM_CYFRAME) +
  		   GetSystemMetrics(SM_CXPADDEDBORDER)) * 2
@@ -190,21 +180,21 @@ index 93fe465..a5d7a89 100644
  		- gui_mswin_get_menu_height(FALSE)
  #endif
 diff --git a/src/option.h b/src/option.h
-index 442a1e7..b65782c 100644
+index 56ceb4211..96a9a1352 100644
 --- a/src/option.h
 +++ b/src/option.h
-@@ -235,7 +235,8 @@
- #define GO_TOOLBAR	'T'		/* add toolbar */
+@@ -237,7 +237,8 @@
  #define GO_FOOTER	'F'		/* add footer */
  #define GO_VERTICAL	'v'		/* arrange dialog buttons vertically */
--#define GO_ALL		"aAbcefFghilmMprtTv" /* all possible flags for 'go' */
+ #define GO_KEEPWINSIZE	'k'		/* keep GUI window size */
+-#define GO_ALL		"!aAbcefFghilmMprtTvk" /* all possible flags for 'go' */
 +#define GO_NOCAPTION	'C'		/* remove caption bar */
-+#define GO_ALL		"aAbcCefFghilmMprtTv" /* all possible flags for 'go' */
++#define GO_ALL		"!aAbcCefFghilmMprtTvk" /* all possible flags for 'go' */
  
  /* flags for 'comments' option */
  #define COM_NEST	'n'		/* comments strings nest */
 diff --git a/src/proto/gui_w32.pro b/src/proto/gui_w32.pro
-index 3ff4040..664490b 100644
+index c336892c6..0d08ac198 100644
 --- a/src/proto/gui_w32.pro
 +++ b/src/proto/gui_w32.pro
 @@ -62,6 +62,7 @@ void mch_set_mouse_shape(int shape);

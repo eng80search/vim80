@@ -576,3 +576,31 @@ let g:NERDTrimTrailingWhitespace = 1
 let g:match_ignorecase = 1
 " let g:match_words = "<\t*begin>:<\t*end>"
 let g:match_words = "\v^\tbegin$:\v^\tend$"
+
+"--------------------------------------------------------------------------------
+"vim 8.1 terminal Setting
+"--------------------------------------------------------------------------------
+function! GitBash()
+    " 日本語Windowsの場合`ja`が設定されるので、入力ロケールに合わせたUTF-8に設定しなおす
+    let l:env = {
+                \ 'LANG': systemlist('"C:/Program Files/Git/usr/bin/locale.exe" -iU')[0],
+                \ }
+
+    " remote連携のための設定
+    if has('clientserver')
+        call extend(l:env, {
+                    \ 'GVIM': $VIMRUNTIME,
+                    \ 'VIM_SERVERNAME': v:servername,
+                    \ })
+    endif
+
+    " term_startでgit for windowsのbashを実行する
+    call term_start(['C:/Program Files/Git/bin/bash.exe', '-l'], {
+                \ 'term_finish': 'close',
+                \ 'cwd': $USERPROFILE,
+                \ 'env': {'LANG':'utf-8'}
+                \ })
+
+endfunction
+
+nnoremap <Leader>g :<C-u>call GitBash()<CR>

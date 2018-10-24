@@ -1,3 +1,4 @@
+clean-generated-lib.diff #-no_kaoriya
 disable_regexp_logs.diff #-no_kaoriya
 python2-warn.diff #+experiments
 0001-rich_icon.diff #-no_kaoriya
@@ -9,7 +10,7 @@ python2-warn.diff #+experiments
 2005-ambiwidth_auto.diff #-no_kaoriya
 2006-init_winsock.diff #-no_kaoriya
 2008-sentence_until_punctuation.diff #-no_kaoriya
-2010-imaf_imsf_on_cui.diff #-no_kaoriya
+2010-imaf_imsf_on_gui.diff #-no_kaoriya
 2520-migemo_feature.diff #-no_kaoriya
 2530-guess_encode_feature.diff #-no_kaoriya
 4001-ftp_autolink_2html.diff #-no_kaoriya
@@ -22,7 +23,6 @@ X007-make_compact_func.diff #+experiments
 X008-async_job.diff #+experiments
 X010-autoload_cache.diff #+experiments
 X011-GH592-fix-height-adjustment.diff #-no_kaoriya
-X012-ynkdir-im_over_the_spot.diff #-no_kaoriya
 X013-721-investigate.diff #+debug
 X014-ex-reverse.diff #+experiments
 0000-kaoriya_marks.diff #-no_kaoriya

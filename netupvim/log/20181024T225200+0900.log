@@ -1,0 +1,16 @@
+2018/10/24 22:52:01.722618 netup version v1.4.1, start logging
+2018/10/24 22:52:01.722618 context: target=E:\00_OurFamily\00_Develop\33_Git\vim80 source=GitHub: koron/vim-kaoriya pattern=^vim\d+-kaoriya-win64-[\d.]+-\d+\.zip$
+2018/10/24 22:52:01.722618 determined source: GitHub: koron/vim-kaoriya pattern=^vim\d+-kaoriya-win64-[\d.]+-\d+\.zip$
+2018/10/24 22:52:03.635453 download URL https://github.com/koron/vim-kaoriya/releases/download/v8.1.0005-20180520/vim81-kaoriya-win64-8.1.0005-20180520.zip as file E:\00_OurFamily\00_Develop\33_Git\vim80\netupvim\tmp\vim81-kaoriya-win64-8.1.0005-20180520.zip
+2018/10/24 22:52:08.445683 download completed successfully
+2018/10/24 22:52:08.445683 extract archive: E:\00_OurFamily\00_Develop\33_Git\vim80\netupvim\tmp\vim81-kaoriya-win64-8.1.0005-20180520.zip
+2018/10/24 22:52:14.896818 extracted 47830515 bytes
+2018/10/24 22:52:14.993825 extract completed successfully
+2018/10/24 22:52:15.044906 trying to update netupvim
+2018/10/24 22:52:15.049962 context: target=E:\00_OurFamily\00_Develop\33_Git\vim80 source=GitHub: koron/netupvim pattern=^netupvim-.*\.zip$
+2018/10/24 22:52:15.049962 determined source: GitHub: koron/netupvim pattern=^netupvim-.*\.zip$
+2018/10/24 22:52:15.268473 download URL https://github.com/koron/netupvim/releases/download/v1.4.1/netupvim-v1.4.1.zip as file E:\00_OurFamily\00_Develop\33_Git\vim80\netupvim\tmp\netupvim-v1.4.1.zip
+2018/10/24 22:52:17.862438 download completed successfully
+2018/10/24 22:52:17.862438 extract archive: E:\00_OurFamily\00_Develop\33_Git\vim80\netupvim\tmp\netupvim-v1.4.1.zip
+2018/10/24 22:52:17.988357 extracted 6250339 bytes
+2018/10/24 22:52:18.006357 extract completed successfully

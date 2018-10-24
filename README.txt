@@ -1,9 +1,9 @@
                    Vim version 8.0 香り屋版 導入マニュアル
 
-                                                         Version: 1.9.1
+                                                         Version: 1.9.3
                                                           Author: MURAOKA Taro
                                                            Since: 23-Aug-1999
-                                                     Last Change: 01-Jan-2017.
+                                                     Last Change: 18-May-2018.
 
 概要
   Vimはviクローンに分類されるテキストエディタです。
@@ -20,12 +20,12 @@
   いるので、解凍してシステム内の好きな場所に配置してください。
 
   32bit版
-    配布ファイル: vim80-kaoriya-win32-V.V.V-YYYYMMDD.zip
-    Vimプログラムフォルダ: vim80-kaoriya-win32.zip
+    配布ファイル: vim81-kaoriya-win32-V.V.V-YYYYMMDD.zip
+    Vimプログラムフォルダ: vim81-kaoriya-win32.zip
 
   64bit版
-    配布ファイル: vim80-kaoriya-win64-V.V.V-YYYYMMDD.zip
-    Vimプログラムフォルダ: vim80-kaoriya-win64
+    配布ファイル: vim81-kaoriya-win64-V.V.V-YYYYMMDD.zip
+    Vimプログラムフォルダ: vim81-kaoriya-win64
 
   上記のV.V.VにはベースとなったVimのバージョンがパッチ番号まで含めて入ります。
   上記のYYYYMMDDにはリリースの年月日が入ります。
@@ -55,11 +55,11 @@ Vimの拡張機能について
     現在のVimはctagsを同梱していません。必要とする方は以下のサイトから各自入手
     しインストールしてください。
 
-    - h_east's website (ctags日本語対応版バイナリ配布場所)
-        http://hp.vector.co.jp/authors/VA025040/
+    - Universal Ctags
+        https://ctags.io/
 
-    - ctagsオリジナルサイト
-        http://ctags.sourceforge.net/
+    - Windows 版ダウンロード
+        https://github.com/universal-ctags/ctags-win32/releases
 
   Luaとの連携
     KaoriYa版にはLua (LuaJIT)がバンドルされているので、Luaインターフェースは自
