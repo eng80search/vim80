@@ -1,15 +1,15 @@
 
 "---------------------------------------------------------------------------
-" ƒEƒCƒ“ƒhƒE‚ÉŠÖ‚·‚éİ’è:
+" ã‚¦ã‚¤ãƒ³ãƒ‰ã‚¦ã«é–¢ã™ã‚‹è¨­å®š:
 "
-" ƒEƒCƒ“ƒhƒE‚Ì•
+" ã‚¦ã‚¤ãƒ³ãƒ‰ã‚¦ã®å¹…
 set columns=120
-" ƒEƒCƒ“ƒhƒE‚Ì‚‚³
+" ã‚¦ã‚¤ãƒ³ãƒ‰ã‚¦ã®é«˜ã•
 set lines=35
-" ƒRƒ}ƒ“ƒhƒ‰ƒCƒ“‚Ì‚‚³(GUIg—p)
+" ã‚³ãƒãƒ³ãƒ‰ãƒ©ã‚¤ãƒ³ã®é«˜ã•(GUIä½¿ç”¨æ™‚)
 set cmdheight=2
 "---------------------------------------------------------------------------
-" ƒJƒ‰[İ’è:
+" ã‚«ãƒ©ãƒ¼è¨­å®š:
 colorscheme  onedark
 "colorscheme  kalisi
 "set background=light
@@ -19,24 +19,27 @@ colorscheme  onedark
 "LuciusBlackHighContrast
 "LuciusWhiteLowContrast
 
-""ƒƒjƒ…[•\¦•¶š‰»‚¯İ’è
+""ãƒ¡ãƒ‹ãƒ¥ãƒ¼è¡¨ç¤ºæ–‡å­—åŒ–ã‘è¨­å®š
 "source $VIMRUNTIME/delmenu.vim
 "set langmenu=ja_jp.utf-8
 "source $VIMRUNTIME/menu.vim
 
-"ƒXƒNƒ[ƒ‹ƒXƒy[ƒX‚Í‚È‚µ‚É‚·‚é
+"ã‚¹ã‚¯ãƒ­ãƒ¼ãƒ«ã‚¹ãƒšãƒ¼ã‚¹ã¯ãªã—ã«ã™ã‚‹
 "scrolloff    number of screen lines to show around the cursor
 set so=0
 
-""ƒtƒHƒ“ƒgİ’è
+""ãƒ•ã‚©ãƒ³ãƒˆè¨­å®š
 "set guifont=Ricty_for_Powerline:h14
-""‘SŠp•¶šİ’è
+""å…¨è§’æ–‡å­—è¨­å®š
 "set guifontwide=Ricty_for_Powerline:h14
 
 "plugin setting: vim-bookmarks
 highlight BookmarkSign guibg=blue guifg=yellow
 
-"UTF8•¶š‰»‚¯‘Îô
+"UTF8æ–‡å­—åŒ–ã‘å¯¾ç­–
 source $VIMRUNTIME/delmenu.vim
 set langmenu=ja_jp.utf-8
 source $VIMRUNTIME/menu.vim
+
+"Vim 8.1ã‹ã‚‰è¿½åŠ ã•ã‚ŒãŸã‚¿ãƒ¼ãƒŸãƒŠãƒ«ã«ãŠã„ã¦ã€èƒŒæ™¯è‰²ã‚’é»’ã«å¤‰æ›´ã™ã‚‹
+hi Terminal guibg=black

@@ -1,16 +1,16 @@
 
 "----------------------------------------
-" 2017”N5Œ25“ú”Å
-" Kaoriya‘Îô
+" 2017å¹´5æœˆ25æ—¥ç‰ˆ
+" Kaoriyaå¯¾ç­–
 "----------------------------------------
 
 "--------------------------------------------------------------------------------
 "NERDTree Setting
 "--------------------------------------------------------------------------------
 nnoremap <silent><C-e> :NERDTreeToggle<CR>
-let NERDTreeQuitOnOpen = 0 "ƒtƒ@ƒCƒ‹‚ğŠJ‚¢‚½‚ç•Â‚¶‚éê‡‚Í1
-let g:NERDTreeShowBookmarks=1 "ƒuƒbƒNƒ}[ƒN‰Šú•\¦
-let NERDTreeWinSize = 40 "WindowsƒTƒCƒYİ’è
+let NERDTreeQuitOnOpen = 0 "ãƒ•ã‚¡ã‚¤ãƒ«ã‚’é–‹ã„ãŸã‚‰é–‰ã˜ã‚‹å ´åˆã¯1
+let g:NERDTreeShowBookmarks=1 "ãƒ–ãƒƒã‚¯ãƒãƒ¼ã‚¯åˆæœŸè¡¨ç¤º
+let NERDTreeWinSize = 40 "Windowsã‚µã‚¤ã‚ºè¨­å®š
 
 " NERDTress File highlighting
 function! NERDTreeHighlightFile(extension, fg, bg, guifg, guibg)
@@ -50,7 +50,7 @@ call NERDTreeHighlightFile('config', 'yellow',    'none', '#fc3737', '#282c34')
 function! NERDTreeAutoUpdate()
     try
 
-        "ˆ—‘ÎÛ‚ªNERDTreeƒEƒBƒ“ƒhƒE©•ª©•ª‚Ìê‡‚ÍXVˆ—‚ğs‚í‚È‚¢B
+        "å‡¦ç†å¯¾è±¡ãŒNERDTreeã‚¦ã‚£ãƒ³ãƒ‰ã‚¦è‡ªåˆ†è‡ªåˆ†ã®å ´åˆã¯æ›´æ–°å‡¦ç†ã‚’è¡Œã‚ãªã„ã€‚
         if exists("t:NERDTreeBufName") && bufwinnr(t:NERDTreeBufName) == winnr()
             return
         endif
@@ -68,14 +68,14 @@ function! NERDTreeAutoUpdate()
             return
         endif
 
-        "ƒEƒBƒ“ƒhƒE‚ğ–ß‚·
+        "ã‚¦ã‚£ãƒ³ãƒ‰ã‚¦ã‚’æˆ»ã™
         if exists("t:NERDTreeBufName") && bufwinnr(t:NERDTreeBufName) == winnr()
             wincmd w
         endif
 
         NERDTreeFind
 
-        "ƒEƒBƒ“ƒhƒE‚ğ–ß‚·
+        "ã‚¦ã‚£ãƒ³ãƒ‰ã‚¦ã‚’æˆ»ã™
         if exists("t:NERDTreeBufName") && bufwinnr(t:NERDTreeBufName) == winnr()
         wincmd w
         endif
@@ -115,23 +115,23 @@ let g:MRU_Use_CursorLine = 1
 
 
 "--------------------------------------------------------------------------------
-"Tagbar‚Ìİ’è
+"Tagbarã®è¨­å®š
 "--------------------------------------------------------------------------------
 nnoremap <silent><C-a> :TagbarToggle<CR>
 
 "--------------------------------------------------------------------------------
-"NerdTree‚ÆTagbar‚Ì‡‘Ìİ’è
+"NerdTreeã¨Tagbarã®åˆä½“è¨­å®š
 "--------------------------------------------------------------------------------
 nmap <silent><C-s> :ToggleNERDTreeAndTagbar<CR>
 
 
 "--------------------------------------------------------------------------------
-"Œ»İ‚ÌƒEƒBƒ“ƒhƒE‚ÌƒJƒŒƒ“ƒgƒfƒBƒŒƒNƒgƒŠ‚ğŠJ‚¢‚½ƒtƒ@ƒCƒ‹‚ÌƒpƒX‚Åİ’è‚·‚é
+"ç¾åœ¨ã®ã‚¦ã‚£ãƒ³ãƒ‰ã‚¦ã®ã‚«ãƒ¬ãƒ³ãƒˆãƒ‡ã‚£ãƒ¬ã‚¯ãƒˆãƒªã‚’é–‹ã„ãŸãƒ•ã‚¡ã‚¤ãƒ«ã®ãƒ‘ã‚¹ã§è¨­å®šã™ã‚‹
 "--------------------------------------------------------------------------------
 nnoremap <silent> ,cd :lcd %:h<CR>
 "
 "--------------------------------------------------------------------------------
-"SQL®Œ`ƒc[ƒ‹ƒvƒ‰ƒOƒCƒ“ƒL[ƒ}ƒbƒsƒ“ƒO
+"SQLæ•´å½¢ãƒ„ãƒ¼ãƒ«ãƒ—ãƒ©ã‚°ã‚¤ãƒ³ã‚­ãƒ¼ãƒãƒƒãƒ”ãƒ³ã‚°
 "--------------------------------------------------------------------------------
 vmap <silent>,sf        :SQLUFormatter<CR>
 nmap <silent>,scl       :SQLU_CreateColumnList<CR>
@@ -141,15 +141,15 @@ nmap <silent>,scp       :SQLU_CreateProcedure<CR>
 
 
 "--------------------------------------------------------------------------------
-"ƒvƒ‰ƒOƒCƒ“Align‚Ìƒƒjƒ…[”ñ•\¦
+"ãƒ—ãƒ©ã‚°ã‚¤ãƒ³Alignã®ãƒ¡ãƒ‹ãƒ¥ãƒ¼éè¡¨ç¤º
 :let g:DrChipTopLvlMenu = ""
 "--------------------------------------------------------------------------------
-"ƒvƒ‰ƒOƒCƒ“sqlutil‚Ìƒƒjƒ…[”ñ•\¦
+"ãƒ—ãƒ©ã‚°ã‚¤ãƒ³sqlutilã®ãƒ¡ãƒ‹ãƒ¥ãƒ¼éè¡¨ç¤º
 :let  g:sqlutil_default_menu_mode = 0
 
 
 ""--------------------------------------------------------------------------------
-""ƒf[ƒ^ƒx[ƒXƒAƒNƒZƒX—pİ’èidbext.vimj
+""ãƒ‡ãƒ¼ã‚¿ãƒ™ãƒ¼ã‚¹ã‚¢ã‚¯ã‚»ã‚¹ç”¨è¨­å®šï¼ˆdbext.vimï¼‰
 ""--------------------------------------------------------------------------------
 "let dbext_default_profile=""
 "let dbext_default_type="SQLSRV"
@@ -158,22 +158,22 @@ nmap <silent>,scp       :SQLU_CreateProcedure<CR>
 "let dbext_default_dbname="Temp"
 "let dbext_default_srvname="localhost\\SQLEXPRESS2014"
 
-"vim‚É•\¦‚·‚és”İ’è
+"vimã«è¡¨ç¤ºã™ã‚‹è¡Œæ•°è¨­å®š
 "let dbext_default_buffer_lines=80
 "
 "--------------------------------------------------------------------------------
-"ytagbar.vimzƒvƒ‰ƒOƒCƒ“ ŠÖ”ˆê——‚ğ•\¦‚·‚é
+"ã€tagbar.vimã€‘ãƒ—ãƒ©ã‚°ã‚¤ãƒ³ é–¢æ•°ä¸€è¦§ã‚’è¡¨ç¤ºã™ã‚‹
 "--------------------------------------------------------------------------------
-"vbƒvƒƒOƒ‰ƒ€‚ğ”F¯‚Å‚«‚é‚æ‚¤‚Éİ’è‚·‚é
+"vbãƒ—ãƒ­ã‚°ãƒ©ãƒ ã‚’èªè­˜ã§ãã‚‹ã‚ˆã†ã«è¨­å®šã™ã‚‹
 nmap <F12> :TagbarToggle<CR>
 
 "--------------------------------------------------------------------------------
-"ytoggletagbar.vimzTagbar‚ÆNerdTreeƒvƒ‰ƒOƒCƒ“‚ğã‰º‚É”z’u‚·‚éƒvƒ‰ƒOƒCƒ“
+"ã€toggletagbar.vimã€‘Tagbarã¨NerdTreeãƒ—ãƒ©ã‚°ã‚¤ãƒ³ã‚’ä¸Šä¸‹ã«é…ç½®ã™ã‚‹ãƒ—ãƒ©ã‚°ã‚¤ãƒ³
 "--------------------------------------------------------------------------------
 nmap <F8> :ToggleNERDTreeAndTagbar<CR>
 
 "--------------------------------------------------------------------------------
-"ylightline.vimz
+"ã€lightline.vimã€‘
 "--------------------------------------------------------------------------------
 "[2b60] Branch symbol
 "[2b61] LN (line) symbol
@@ -272,7 +272,7 @@ let g:lightline = {
       \ }
 
 "--------------------------------------------------------------------------------
-" syntastic ƒvƒ‰ƒOƒCƒ“‚Ì‚½‚ß‚Ìİ’è 
+" syntastic ãƒ—ãƒ©ã‚°ã‚¤ãƒ³ã®ãŸã‚ã®è¨­å®š 
 " http://itchyny.hatenablog.com/entry/20130918/1379461406
 "--------------------------------------------------------------------------------
     let g:syntastic_mode_map = { 'mode': 'passive' }
@@ -287,9 +287,9 @@ let g:lightline = {
     endfunction
 
 "--------------------------------------------------------------------------------
-"yneocomplete.vimzƒvƒ‰ƒOƒCƒ“ İ’è
+"ã€neocomplete.vimã€‘ãƒ—ãƒ©ã‚°ã‚¤ãƒ³ è¨­å®š
 "--------------------------------------------------------------------------------
-"ƒIƒtƒBƒVƒƒƒ‹ƒTƒCƒg‚Ì‚¨‚·‚·‚ß‚Ìİ’è
+"ã‚ªãƒ•ã‚£ã‚·ãƒ£ãƒ«ã‚µã‚¤ãƒˆã®ãŠã™ã™ã‚ã®è¨­å®š
 "Note: This option must be set in .vimrc(_vimrc).  NOT IN .gvimrc(_gvimrc)!
 " Disable AutoComplPop.
 let g:acp_enableAtStartup = 0
@@ -346,7 +346,7 @@ inoremap <expr><BS> neocomplete#smart_close_popup()."\<C-h>"
 autocmd FileType css setlocal omnifunc=csscomplete#CompleteCSS
 autocmd FileType html,markdown setlocal omnifunc=htmlcomplete#CompleteTags
 autocmd FileType javascript setlocal omnifunc=javascriptcomplete#CompleteJS
-"jedi+python3‚Å‚ÍƒGƒ‰[‚É‚È‚é‚Ì‚Å–³Œø‚É‚·‚é
+"jedi+python3ã§ã¯ã‚¨ãƒ©ãƒ¼ã«ãªã‚‹ã®ã§ç„¡åŠ¹ã«ã™ã‚‹
 "autocmd FileType python setlocal omnifunc=pythoncomplete#Complete
 autocmd FileType xml setlocal omnifunc=xmlcomplete#CompleteTags
 
@@ -414,20 +414,20 @@ let g:neocomplete#sources#omni#input_patterns.perl = '\h\w*->\h\w*\|\h\w*::'
 ""--------------------------------------------------------------------------------
 ""Align Setting
 ""--------------------------------------------------------------------------------
-""“ú–{Œê‚Åg—p‚·‚é‚½‚ß‚É
+""æ—¥æœ¬èªã§ä½¿ç”¨ã™ã‚‹ãŸã‚ã«
 "let g:Align_xstrlen = 3
 
 
 "--------------------------------------------------------------------------------
 "Singleton Setting
 "--------------------------------------------------------------------------------
-"ƒCƒ“ƒXƒ^ƒ“ƒX‚ğˆê‚Â‚É‚·‚é‚½‚ß‚É
+"ã‚¤ãƒ³ã‚¹ã‚¿ãƒ³ã‚¹ã‚’ä¸€ã¤ã«ã™ã‚‹ãŸã‚ã«
 call singleton#enable()
 
 "--------------------------------------------------------------------------------
 "incsearch Setting
 "--------------------------------------------------------------------------------
-"ƒfƒtƒHƒ‹ƒgŒŸõ‚Å‚Íˆê‚Â‚ÌŒŸõŒ‹‰Ê‚µ‚©ƒnƒCƒ‰ƒCƒg‚Å‚«‚È‚¢–â‘è‚ğ‰ğŒˆ
+"ãƒ‡ãƒ•ã‚©ãƒ«ãƒˆæ¤œç´¢ã§ã¯ä¸€ã¤ã®æ¤œç´¢çµæœã—ã‹ãƒã‚¤ãƒ©ã‚¤ãƒˆã§ããªã„å•é¡Œã‚’è§£æ±º
 let g:incsearch#magic = '\v'
 map /  <Plug>(incsearch-forward)
 map ?  <Plug>(incsearch-backward)
@@ -463,7 +463,7 @@ let g:ctrlp_match_window = 'bottom,order:btt,min:1,max:15,results:9999'
 "--------------------------------------------------------------------------------
 "vim-bookmarks Setting
 "--------------------------------------------------------------------------------
-"ƒ}[ƒN‚ÌFİ’è
+"ãƒãƒ¼ã‚¯ã®è‰²è¨­å®š
 
 let g:bookmark_sign = '>>'
 let g:bookmark_annotation_sign = '##'
@@ -495,7 +495,7 @@ nmap mx <Plug>BookmarkClearAll
 "--------------------------------------------------------------------------------
 "QuickRun Setting
 "--------------------------------------------------------------------------------
-"o—ÍŒ‹‰Ê‚ğ‰º‚É•\¦‚·‚é
+"å‡ºåŠ›çµæœã‚’ä¸‹ã«è¡¨ç¤ºã™ã‚‹
 
 
 if !exists("g:quickrun_config")
@@ -503,7 +503,7 @@ if !exists("g:quickrun_config")
 endif
 "let g:quickrun_config = {}
 
-"ˆê”Ê‚Ìİ’è
+"ä¸€èˆ¬ã®è¨­å®š
 let g:quickrun_config["_"] = {
       \ 'runner'    : 'system',
       \ 'outputter' : 'error',
@@ -513,7 +513,7 @@ let g:quickrun_config["_"] = {
       \ 'outputter/buffer/close_on_empty' : 1,
       \ }
 
-"powershell‚Ìê—pİ’è
+"powershellã®å°‚ç”¨è¨­å®š
 let g:quickrun_config["ps1"] = {
       \   "hook/output_encode/enable" : 1,
       \   "hook/output_encode/encoding" : "cp932",
@@ -521,14 +521,14 @@ let g:quickrun_config["ps1"] = {
       \   'exec' : '%c   %s',
       \ }
 
-"Pthone Utf8•¶š‰»‚¯‘Îô
+"Pthone Utf8æ–‡å­—åŒ–ã‘å¯¾ç­–
 if has('win32') || has('win64')
     let g:quickrun_config['python'] = { 
     \   "hook/output_encode/enable" : 1,
     \   "hook/output_encode/encoding" : "cp932",
     \}
 endif
-"ƒVƒ‡ƒbƒgƒJƒbƒgƒL[
+"ã‚·ãƒ§ãƒƒãƒˆã‚«ãƒƒãƒˆã‚­ãƒ¼
 nnoremap <silent> <F9> :QuickRun<CR>
 
 "--------------------------------------------------------------------------------
@@ -538,7 +538,7 @@ let g:python_highlight_all = 1
 
 
 
-"python—pƒGƒ‰[ƒtƒH[ƒ}ƒbƒgiƒWƒƒƒ“ƒv‚Å‚«‚é‚æ‚¤‚É‚·‚é‚½‚ßj
+"pythonç”¨ã‚¨ãƒ©ãƒ¼ãƒ•ã‚©ãƒ¼ãƒãƒƒãƒˆï¼ˆã‚¸ãƒ£ãƒ³ãƒ—ã§ãã‚‹ã‚ˆã†ã«ã™ã‚‹ãŸã‚ï¼‰
 augroup ErrorFormat
     autocmd BufNewFile,BufRead *.py
         \ set efm=%C\ %.%#,%A\ \ File\ \"%f\"\\,\ line\ %l%.%#,%Z%[%^\ ]%\\@=%m
@@ -581,24 +581,24 @@ let g:match_words = "\v^\tbegin$:\v^\tend$"
 "vim 8.1 terminal Setting
 "--------------------------------------------------------------------------------
 function! GitBash()
-    " “ú–{ŒêWindows‚Ìê‡`ja`‚ªİ’è‚³‚ê‚é‚Ì‚ÅA“ü—ÍƒƒP[ƒ‹‚É‡‚í‚¹‚½UTF-8‚Éİ’è‚µ‚È‚¨‚·
-    let l:env = {
-                \ 'LANG': systemlist('"C:/Program Files/Git/usr/bin/locale.exe" -iU')[0],
-                \ }
+    " æ—¥æœ¬èªWindowsã®å ´åˆ`ja`ãŒè¨­å®šã•ã‚Œã‚‹ã®ã§ã€å…¥åŠ›ãƒ­ã‚±ãƒ¼ãƒ«ã«åˆã‚ã›ãŸUTF-8ã«è¨­å®šã—ãªãŠã™
+    " let l:env = {
+    "             \ 'LANG': systemlist('"C:/Program Files/Git/usr/bin/locale.exe" -iU')[0],
+    "             \ }
+    "
+    " " remoteé€£æºã®ãŸã‚ã®è¨­å®š
+    " if has('clientserver')
+    "     call extend(l:env, {
+    "                 \ 'GVIM': $VIMRUNTIME,
+    "                 \ 'VIM_SERVERNAME': v:servername,
+    "                 \ })
+    " endif
 
-    " remote˜AŒg‚Ì‚½‚ß‚Ìİ’è
-    if has('clientserver')
-        call extend(l:env, {
-                    \ 'GVIM': $VIMRUNTIME,
-                    \ 'VIM_SERVERNAME': v:servername,
-                    \ })
-    endif
-
-    " term_start‚Ågit for windows‚Ìbash‚ğÀs‚·‚é
+    " term_startã§git for windowsã®bashã‚’å®Ÿè¡Œã™ã‚‹
     call term_start(['C:/Program Files/Git/bin/bash.exe', '-l'], {
                 \ 'term_finish': 'close',
-                \ 'cwd': $USERPROFILE,
-                \ 'env': {'LANG':'utf-8'}
+                \ 'cwd': expand('%:p:h'),
+                \ 'env': {'LANG':'ja_JP.UTF-8'}
                 \ })
 
 endfunction
