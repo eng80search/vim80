@@ -603,4 +603,5 @@ function! GitBash()
 
 endfunction
 
-nnoremap <Leader>g :<C-u>call GitBash()<CR>
+command! Gbash call GitBash()
+" nnoremap <Leader>g :<C-u>call GitBash()<CR>
