@@ -47,8 +47,8 @@ call plug#begin('$VIM/plugins')
     " vim-bookmarks.vim Vim bookmark plugin
     Plug 'MattesGroeger/vim-bookmarks'
 
-    " Syntax checking Plugin 
-    Plug 'vim-syntastic/syntastic'
+    " " Syntax checking Plugin
+    " Plug 'vim-syntastic/syntastic'
 
     " python3 Plugin : autocompletion need Install jedi Labrary from pip
     Plug 'davidhalter/jedi-vim'
@@ -78,7 +78,7 @@ call plug#begin('$VIM/plugins')
     Plug 'tpope/vim-fugitive'
 
     " Git Plugin shows a git diff in the gutter and stages/undoes hunks
-    Plug 'airblade/vim-gitgutter'
+    " Plug 'airblade/vim-gitgutter'
 
     "" NERDTree and Tagbar combined in one windows
     "Plug 'pseewald/nerdtree-tagbar-combined'
