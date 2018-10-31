@@ -46,6 +46,7 @@ set number      "行番号を表示する
 set cursorline  "カーソル行の背景色を変える
 set autochdir   "カレントディレクトリを自動的に変更する
 set cursorcolumn "カーソル位置のカラムの背景色を変える
+set ignorecase   "検索は大文字小文字の区別をしない
 
 nnoremap <F3> :<C-u>setlocal relativenumber!<CR>
 
