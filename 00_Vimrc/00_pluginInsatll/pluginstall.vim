@@ -104,4 +104,7 @@ call plug#begin('$VIM/plugins')
     "Vim Japanese Help 
     Plug 'vim-jp/vimdoc-ja'
 
+    "Vim Javascript
+    Plug 'pangloss/vim-javascript'
+
 call plug#end()

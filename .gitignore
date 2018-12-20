@@ -1,3 +1,4 @@
 # Vimのバージョン管理不要なファイル
 _temp/
 plugins/
+*.lnk
