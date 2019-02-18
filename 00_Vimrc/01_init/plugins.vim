@@ -20,6 +20,8 @@ endfunction
 
 call NERDTreeHighlightFile('vim',    'yellow',    'none', '#390088', '#282c34')
 call NERDTreeHighlightFile('java',   'yellow',    'none', '#fcdb79', '#282c34')
+call NERDTreeHighlightFile('json',   'blue',      'none', '#8a2be2', '#282c34')
+call NERDTreeHighlightFile('py',     'yellow',    'none', '#fcdb79', '#282c34')
 call NERDTreeHighlightFile('asp',    'yellow',    'none', '#B9B069', '#282c34')
 call NERDTreeHighlightFile('cs',     'yellow',    'none', '#c4f74f', '#282c34')
 call NERDTreeHighlightFile('js',     'Red',       'none', '#76eddb', '#282c34')
@@ -122,7 +124,7 @@ nnoremap <silent><C-a> :TagbarToggle<CR>
 "--------------------------------------------------------------------------------
 "NerdTreeとTagbarの合体設定
 "--------------------------------------------------------------------------------
-nmap <silent><C-s> :ToggleNERDTreeAndTagbar<CR>
+" nmap <silent><C-s> :ToggleNERDTreeAndTagbar<CR>
 
 
 "--------------------------------------------------------------------------------
@@ -165,7 +167,7 @@ nmap <silent>,scp       :SQLU_CreateProcedure<CR>
 "【tagbar.vim】プラグイン 関数一覧を表示する
 "--------------------------------------------------------------------------------
 "vbプログラムを認識できるように設定する
-nmap <F12> :TagbarToggle<CR>
+" nmap <F12> :TagbarToggle<CR>
 
 "--------------------------------------------------------------------------------
 "【toggletagbar.vim】TagbarとNerdTreeプラグインを上下に配置するプラグイン
@@ -275,16 +277,16 @@ let g:lightline = {
 " syntastic プラグインのための設定 
 " http://itchyny.hatenablog.com/entry/20130918/1379461406
 "--------------------------------------------------------------------------------
-    let g:syntastic_mode_map = { 'mode': 'passive' }
-    augroup AutoSyntastic
-        autocmd!
-        autocmd BufWritePost *.py,*.php call s:syntastic()
-    augroup END
-
-    function! s:syntastic()
-        SyntasticCheck
-        "call lightline#update()
-    endfunction
+    " let g:syntastic_mode_map = { 'mode': 'passive' }
+    " augroup AutoSyntastic
+    "     autocmd!
+    "     autocmd BufWritePost *.py,*.php call s:syntastic()
+    " augroup END
+    "
+    " function! s:syntastic()
+    "     SyntasticCheck
+    "     "call lightline#update()
+    " endfunction
 
 "--------------------------------------------------------------------------------
 "【neocomplete.vim】プラグイン 設定
@@ -498,52 +500,44 @@ nmap mx <Plug>BookmarkClearAll
 "出力結果を下に表示する
 
 
-if !exists("g:quickrun_config")
-    let g:quickrun_config={}
-endif
-"let g:quickrun_config = {}
+" if !exists("g:quickrun_config")
+"     let g:quickrun_config={}
+" endif
+" "let g:quickrun_config = {}
+"
+" "一般の設定
+" let g:quickrun_config["_"] = {
+"       \ 'runner'    : 'system',
+"       \ 'outputter' : 'error',
+"       \ 'outputter/error/success' : 'buffer',
+"       \ 'outputter/error/error'   : 'quickfix',
+"       \ 'outputter/buffer/split'  : ':rightbelow 10sp',
+"       \ 'outputter/buffer/close_on_empty' : 1,
+"       \ }
+"
+" "powershellの専用設定
+" let g:quickrun_config["ps1"] = {
+"       \   "hook/output_encode/enable" : 1,
+"       \   "hook/output_encode/encoding" : "cp932",
+"       \   'command' : 'powershell.exe',
+"       \   'exec' : '%c   %s',
+"       \ }
+"
+" "Pthone Utf8文字化け対策
+" if has('win32') || has('win64')
+"     let g:quickrun_config['python'] = {
+"     \   "hook/output_encode/enable" : 1,
+"     \   "hook/output_encode/encoding" : "cp932",
+"     \}
+" endif
+" "ショットカットキー
+" nnoremap <silent> <F9> :QuickRun<CR>
 
-"一般の設定
-let g:quickrun_config["_"] = {
-      \ 'runner'    : 'system',
-      \ 'outputter' : 'error',
-      \ 'outputter/error/success' : 'buffer',
-      \ 'outputter/error/error'   : 'quickfix',
-      \ 'outputter/buffer/split'  : ':rightbelow 10sp',
-      \ 'outputter/buffer/close_on_empty' : 1,
-      \ }
-
-"powershellの専用設定
-let g:quickrun_config["ps1"] = {
-      \   "hook/output_encode/enable" : 1,
-      \   "hook/output_encode/encoding" : "cp932",
-      \   'command' : 'powershell.exe',
-      \   'exec' : '%c   %s',
-      \ }
-
-"Pthone Utf8文字化け対策
-if has('win32') || has('win64')
-    let g:quickrun_config['python'] = { 
-    \   "hook/output_encode/enable" : 1,
-    \   "hook/output_encode/encoding" : "cp932",
-    \}
-endif
-"ショットカットキー
-nnoremap <silent> <F9> :QuickRun<CR>
 
 "--------------------------------------------------------------------------------
 "vim-python/python-syntax Setting
 "--------------------------------------------------------------------------------
 let g:python_highlight_all = 1
-
-
-
-"python用エラーフォーマット（ジャンプできるようにするため）
-augroup ErrorFormat
-    autocmd BufNewFile,BufRead *.py
-        \ set efm=%C\ %.%#,%A\ \ File\ \"%f\"\\,\ line\ %l%.%#,%Z%[%^\ ]%\\@=%m
-augroup END
-
 
 "--------------------------------------------------------------------------------
 "nerdcommenter Setting
@@ -605,3 +599,35 @@ endfunction
 
 command! Gbash call GitBash()
 " nnoremap <Leader>g :<C-u>call GitBash()<CR>
+
+
+"--------------------------------------------------------------------------------
+"YouCompleteMe Setting
+"--------------------------------------------------------------------------------
+"BugFix must fix youcompleteme.vim 180,7!
+ let g:ycm_max_num_candidates = 30
+ let g:ycm_autoclose_preview_window_after_completion=1
+
+
+ autocmd FileType python noremap  <silent> <C-F8>  :YcmCompleter GoTo<CR>
+ autocmd FileType python nnoremap <silent> <C-F7>  :YcmCompleter GoToReferences<CR>
+ autocmd FileType python nnoremap <silent> <C-F5>  :YcmCompleter GetDoc<CR>
+ 
+"--------------------------------------------------------------------------------
+"AsyncRun Setting
+"--------------------------------------------------------------------------------
+let g:asyncrun_open = 15
+let $PYTHONUNBUFFERED=1
+autocmd FileType python noremap <silent><F9>  :AsyncRun python %<CR>
+autocmd FileType python noremap <silent><F10> :vert term  python -m ipdb %<CR>
+autocmd FileType python noremap <silent><F12> :AsyncStop <CR>
+
+"--------------------------------------------------------------------------------
+"Python3 Setting
+"--------------------------------------------------------------------------------
+" python3.7にアップしたあと、PluginのYouCompleteMeを実行すると、
+" 警告メッセージが出たのでそれが出ないように追加
+if has('python3')
+    silent! python3 1
+endif
+

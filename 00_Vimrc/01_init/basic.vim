@@ -191,12 +191,14 @@ set so=0
 "タグジャンプ関連　注：＃は特殊文字なので\\でエスケープする
 "--optionsはctags.cnfファイルの定義関数もタグファイル作成時に追加するとの
 "意味
-noremap <M-g>   :cd %:h<CR> :exe("!ctags -R --options=".expand($VIM)."\\ctags.cnf")<CR>
-noremap <S-w>   :vsp<CR> :exe("tjump ".expand('<cword>'))<CR>
+" noremap <M-g>   :cd %:h<CR> :exe("!ctags -R --options=".expand($VIM)."\\ctags.cnf")<CR>
+" noremap <S-w>   :vsp<CR> :exe("tjump ".expand('<cword>'))<CR>
 "
 "--------------------------------------------------------------------------------
 "検索関連設定
 "--------------------------------------------------------------------------------
+"デフォルトで検索した部分をハイライトする。
+set hlsearch
 "ハイライトの表示切り替え
 nnoremap <silent><Esc><Esc> :<C-u>set nohlsearch!<CR>
 "nnoremap / /\v
@@ -204,7 +206,7 @@ nnoremap <silent><Esc><Esc> :<C-u>set nohlsearch!<CR>
 ""--------------------------------------------------------------------------------
 ""python3 Setting
 ""--------------------------------------------------------------------------------
-autocmd FileType python nnoremap <silent> <F10>  :exe("!python -m pdb %")<CR>
+" autocmd FileType python nnoremap <silent> <F10>  :exe("!python -m pdb %")<CR>
 "autocmd FileType python map <buffer><F5>  <Plug>(quickrun)<CR>
 ""autocmd FileType python map <buffer> <F5> <F5> | :exe("!python -S ".expand($VIM)."\\01_Lib\\PythonRemoteDebugging\\pydbgp.py -d localhost:9000  %:p")<CR>
 "
@@ -217,20 +219,20 @@ autocmd FileType python nnoremap <silent> <F10>  :exe("!python -m pdb %")<CR>
 "--------------------------------------------------------------------------------
 " quickfix Windows height Setting
 "--------------------------------------------------------------------------------
-au FileType qf call AdjustWindowHeight(3, 15)
-function! AdjustWindowHeight(minheight, maxheight)
-    let l = 1
-    let n_lines = 0
-    let w_width = winwidth(0)
-    while l <= line('$')
-        " number to float for division
-        let l_len = strlen(getline(l)) + 0.0
-        let line_width = l_len/w_width
-        let n_lines += float2nr(ceil(line_width))
-        let l += 1
-    endw
-    exe max([min([n_lines, a:maxheight]), a:minheight]) . "wincmd _"
-endfunction
+" au FileType qf call AdjustWindowHeight(3, 15)
+" function! AdjustWindowHeight(minheight, maxheight)
+"     let l = 1
+"     let n_lines = 0
+"     let w_width = winwidth(0)
+"     while l <= line('$')
+"         " number to float for division
+"         let l_len = strlen(getline(l)) + 0.0
+"         let line_width = l_len/w_width
+"         let n_lines += float2nr(ceil(line_width))
+"         let l += 1
+"     endw
+"     exe max([min([n_lines, a:maxheight]), a:minheight]) . "wincmd _"
+" endfunction
 
 "--------------------------------------------------------------------------------
 "コマンドウィンドウ設定
@@ -304,3 +306,4 @@ if has('win32') || has('win64')
     set shellquote=\"
     set shellxquote=
 endif
+

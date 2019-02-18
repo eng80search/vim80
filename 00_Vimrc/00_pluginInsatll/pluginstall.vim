@@ -8,12 +8,6 @@ call plug#begin('$VIM/plugins')
     " NERD commenter
     Plug 'scrooloose/nerdcommenter'
 
-    " incsearch 
-    Plug 'haya14busa/incsearch.vim'
-
-    " NERD syntax highlighting
-    " Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
-
     "tagbar
     Plug 'majutsushi/tagbar'
 
@@ -28,9 +22,6 @@ call plug#begin('$VIM/plugins')
 
     " neocomplete.vim
     Plug 'Shougo/neocomplete.vim'
-
-    " pt.vim Vim plugin for the platinum_search
-    "Plug 'nazo/pt.vim'
 
     " ctrlp.vim Vim plugin for Fuzzy file
     Plug 'kien/ctrlp.vim'
@@ -47,14 +38,8 @@ call plug#begin('$VIM/plugins')
     " vim-bookmarks.vim Vim bookmark plugin
     Plug 'MattesGroeger/vim-bookmarks'
 
-    " " Syntax checking Plugin
-    " Plug 'vim-syntastic/syntastic'
-
-    " python3 Plugin : autocompletion need Install jedi Labrary from pip
-    Plug 'davidhalter/jedi-vim'
-
     " quick run Plugin 
-    Plug 'thinca/vim-quickrun'
+    " Plug 'thinca/vim-quickrun'
 
     "" nerdtree-execute
     Plug 'ivalkeen/nerdtree-execute'
@@ -68,14 +53,55 @@ call plug#begin('$VIM/plugins')
     "" lexima Plugin :Auto close parentheses 
     Plug 'cohama/lexima.vim'
 
+    "extended % matching for Many Fromats
+    Plug 'tmhedberg/matchit'
+
+    "A Vim plugin for Windows PowerShell support
+    Plug 'PProvost/vim-ps1'
+
+    "improved Javascript indentation and syntax support in Vim
+    Plug 'pangloss/vim-javascript'
+
+    "input support in written HTML &CSS 
+    Plug 'mattn/emmet-vim'
+
+    "A code-completion engine for Vim
+    Plug 'Valloric/YouCompleteMe'
+
+    " Git Plugin
+    Plug 'tpope/vim-fugitive'
+
+    " A light and configurable statusline/tabline plugin for vim
+    Plug 'itchyny/lightline.vim'
+
+    " A project which translate Vim documents into Japanese
+    Plug 'vim-jp/vimdoc-ja'
+
+    " incsearch
+    Plug 'haya14busa/incsearch.vim'
+
+    " Run Async Shell Commands in Vim 8.0 and Output to Quickfix Window
+    Plug 'skywind3000/asyncrun.vim'
+
+    " " Syntax checking Plugin
+    " Plug 'vim-syntastic/syntastic'
+
+    " PluginのYouCompleteMeと衝突するため、無効化
+    " " python3 Plugin : autocompletion need Install jedi Labrary from pip
+    " Plug 'davidhalter/jedi-vim'
+
+    " pt.vim Vim plugin for the platinum_search
+    "Plug 'nazo/pt.vim'
+
+
+    " NERD syntax highlighting
+    " Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
     "" dbext.vim
     "Plug 'vim-scripts/dbext.vim'
 
     "" twig syntax highlighting
     "Plug 'evidens/vim-twig'
 
-    " Git Plugin
-    Plug 'tpope/vim-fugitive'
 
     " Git Plugin shows a git diff in the gutter and stages/undoes hunks
     " Plug 'airblade/vim-gitgutter'
@@ -84,7 +110,6 @@ call plug#begin('$VIM/plugins')
     "Plug 'pseewald/nerdtree-tagbar-combined'
 
     "" Customize statusbar
-    Plug 'itchyny/lightline.vim'
 
     "" powerline-extra-symbols
     "Plug 'ryanoasis/powerline-extra-symbols'
@@ -94,17 +119,5 @@ call plug#begin('$VIM/plugins')
 
     "" python3 Plugin : debug Tool
     "Plug 'joonty/vdebug'
-
-    "extended % matching for Many Fromats
-    Plug 'tmhedberg/matchit'
-
-    "A Vim plugin for Windows PowerShell support
-    Plug 'PProvost/vim-ps1'
-
-    "Vim Japanese Help 
-    Plug 'vim-jp/vimdoc-ja'
-
-    "Vim Javascript
-    Plug 'pangloss/vim-javascript'
 
 call plug#end()
