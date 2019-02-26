@@ -616,11 +616,21 @@ command! Gbash call GitBash()
 "--------------------------------------------------------------------------------
 "AsyncRun Setting
 "--------------------------------------------------------------------------------
-let g:asyncrun_open = 15
+let g:asyncrun_open = 9
 let $PYTHONUNBUFFERED=1
 autocmd FileType python noremap <silent><F9>  :AsyncRun python %<CR>
 autocmd FileType python noremap <silent><F10> :vert term  python -m ipdb %<CR>
 autocmd FileType python noremap <silent><F12> :AsyncStop <CR>
+
+autocmd FileType cs noremap <silent><F9>  :AsyncRun msbuild<CR>
+autocmd FileType cs noremap <silent><F12> :AsyncStop <CR>
+autocmd FileType cs let g:asyncrun_encs = "cp932"
+
+
+autocmd FileType java noremap <silent><F8>  :AsyncRun javac %<CR>
+autocmd FileType java noremap <silent><F9>  :AsyncRun java %:r<CR>
+autocmd FileType java noremap <silent><F12> :AsyncStop <CR>
+autocmd FileType java let g:asyncrun_encs = "cp932"
 
 "--------------------------------------------------------------------------------
 "Python3 Setting
