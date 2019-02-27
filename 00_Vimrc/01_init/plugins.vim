@@ -609,9 +609,9 @@ command! Gbash call GitBash()
  let g:ycm_autoclose_preview_window_after_completion=1
 
 
- autocmd FileType python noremap  <silent> <C-F8>  :YcmCompleter GoTo<CR>
- autocmd FileType python nnoremap <silent> <C-F7>  :YcmCompleter GoToReferences<CR>
- autocmd FileType python nnoremap <silent> <C-F5>  :YcmCompleter GetDoc<CR>
+ autocmd FileType python,java  noremap  <silent> <C-F8>  :YcmCompleter GoTo<CR>
+ autocmd FileType python,java  nnoremap <silent> <C-F7>  :YcmCompleter GoToReferences<CR>
+ autocmd FileType python,java  nnoremap <silent> <C-F5>  :YcmCompleter GetDoc<CR>
  
 "--------------------------------------------------------------------------------
 "AsyncRun Setting
@@ -627,8 +627,8 @@ autocmd FileType cs noremap <silent><F12> :AsyncStop <CR>
 autocmd FileType cs let g:asyncrun_encs = "cp932"
 
 
-autocmd FileType java noremap <silent><F8>  :AsyncRun javac %<CR>
-autocmd FileType java noremap <silent><F9>  :AsyncRun java %:r<CR>
+autocmd FileType java noremap <silent><F8>  :AsyncRun javac  -encoding UTF-8 %<CR>
+autocmd FileType java noremap <silent><F9>  :AsyncRun java %:t:r<CR>
 autocmd FileType java noremap <silent><F12> :AsyncStop <CR>
 autocmd FileType java let g:asyncrun_encs = "cp932"
 
