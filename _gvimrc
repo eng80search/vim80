@@ -43,3 +43,11 @@ source $VIMRUNTIME/menu.vim
 
 "Vim 8.1から追加されたターミナルにおいて、背景色を黒に変更する
 hi Terminal guibg=black
+
+" vimを起動時に最大化する
+au GUIEnter * simalt ~x
+
+" フォント設定
+set guifont=MS_Gothic:h11
+" 全角文字の設定
+set guifontwide=MS_Gothic:h11
