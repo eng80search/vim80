@@ -83,6 +83,14 @@ call plug#begin('$VIM/plugins')
     " Run Async Shell Commands in Vim 8.0 and Output to Quickfix Window
     Plug 'skywind3000/asyncrun.vim'
 
+    " Markdown Plugins
+    " if you don't have nodejs and yarn
+    " use pre build
+    Plug 'iamcco/markdown-preview.nvim', { 'do': { -> mkdp#util#install() }}
+
+    " have nodejs and yarn
+    " Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app & yarn install'  }
+
     " " Syntax checking Plugin
     " Plug 'vim-syntastic/syntastic'
 

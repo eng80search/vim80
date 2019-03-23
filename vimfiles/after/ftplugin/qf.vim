@@ -1,4 +1,4 @@
-echo "Test"
+" echo "Test"
 highlight QuickFixError guifg=red
 highlight QuickFixWarning ctermbg=red
 match QuickFixError /\v^.+error:.+$/

@@ -618,7 +618,7 @@ command! Gbash call GitBash()
 "--------------------------------------------------------------------------------
 "AsyncRun Setting
 "--------------------------------------------------------------------------------
-let g:asyncrun_open = 9
+let g:asyncrun_open = 15
 let $PYTHONUNBUFFERED=1
 autocmd FileType python noremap <silent><F9>  :AsyncRun python %<CR>
 autocmd FileType python noremap <silent><F10> :vert term  python -m ipdb %<CR>
@@ -643,3 +643,7 @@ if has('python3')
     silent! python3 1
 endif
 
+"--------------------------------------------------------------------------------
+"Markdown-preview setting
+"--------------------------------------------------------------------------------
+autocmd FileType markdown noremap <silent><C-p>  :MarkdownPreview<CR>
