@@ -57,10 +57,24 @@ set ignorecase   "検索は大文字小文字の区別をしない
 nnoremap <F3> :<C-u>setlocal relativenumber!<CR>
 
 "********************************************************************************
-:set undodir=$VIM\_temp\_undo
-set nobackup "バックアップファイルとスワップファイルの保存場所設定
-" set backupdir=$VIM\_tmp\backup
-set noswapfile "スワップファイルは作らない
+"まずはマイドキュメントディレクトリで該当フォルダを作成すること。
+"swapファイルを作成する
+set swapfile
+set directory=~/_vim/swp
+
+"バックアップファイルを作成する
+set backup
+set backupdir=~/_vim/backUp
+
+"viminfoファイルの設定を行う
+set viminfo+=n~/_vim/viminfo/viminfo.txt2
+
+"永続的にUndoを有効にする
+if has('persistent_undo')
+    set undodir=~/_vim/undo
+    set undofile
+endif
+
 "********************************************************************************
 set ruler  "ルーラーを表示
 syntax on  "シンタックスハイライトを有効にする
